@@ -20,7 +20,6 @@
 
   <link rel="stylesheet" href="../assets/css/theme.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
 
@@ -119,53 +118,27 @@
       </div> <!-- .container -->
     </nav>
   </header>
-  <div class="img-fluid">
-  <img src="https://www.hospitalsurya.com/wp-content/uploads/2020/08/Blood-Bank.jpg" style="height:500px;width:100%" alt="Responsive image">
+  <a href="/blood">Go Back</a>
+  <div class="text-center ">
+<h1>BlOOD BANK LIST</h1>
   </div>
-<div class="mx-auto" align="center" style="padding:50px;">
-<a class="btn btn-danger" href="{{url('b_bank')}}">Blood Bank</a>
-<a class="btn btn-primary" href="{{url('donorlist')}}">Donor List</a>
-</div>
-<div class="d-flex justify-content-center">
-  <h1>JOIN AS A BLOOD DONOR</h1>
-</div>
-<div class="d-flex justify-content-center">
-<form action="{{url('user_donor')}}" method="POST">
-  @csrf
-  <div class="form-group">
-   <label>Name</label>
-    <input type="text" name="name" class="form-control"   placeholder="Enter Donor Name">
-  </div>
-  <div class="form-group">
-  <label>Blood Group</label>
-    <select class="form-control" name="blood" required>
-        <option value="">--Select Blood--</option>
-      <option>A+</option>
-      <option>A-</option>
-      <option>B+</option>
-      <option>B-</option>
-      <option>AB+</option>
-      <option>AB-</option>
-      <option>O+</option>
-      <option>O-</option>
-
-    </select>
-  </div>
-  <div class="form-group">
-  <label>Address</label>
-    <input type="text" name="address" class="form-control"   placeholder="Enter Address">
-  </div>
-  <div class="form-group">
-    <label>Phone</label>
-    <input type="number" name="phone" class="form-control"   placeholder="Enter Phone Number">
-  </div>
+  <div class="container">
+  <div class="row">
+      @foreach($bank as $banks)
  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <div class="col-sm-3 text-center  " style="color:;">
+    <img style="height:70px;width:70px;" src="https://previews.123rf.com/images/archivector/archivector1902/archivector190200192/117306723-donor-blood-icon-symbol-of-red-blood-drops-in-circumference-flat-vector-illustration-for-web-design.jpg" alt="">
+      <p><b>Name:{{$banks->name}}</b></p>
+     
+      <p><b>Address:{{$banks->address}}</b></p>
+      <p><b>Phone:{{$banks->phone}}</b></p>
+     <a class="btn btn-primary" href="tel:{{$banks->phone}}">Call</a>
+
+
+    </div>
+  @endforeach
+  </div>
 </div>
-
-
-
 
 
 
@@ -220,6 +193,7 @@
       <p id="copyright">Copyright &copy; 2021 <a href="https://www.facebook.com/mithun.sutradhar.399041/" target="_blank">Mithun Sutradhar</a>. All right reserved</p>
     </div>
   </footer>
+
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="../assets/js/bootstrap.bundle.min.js"></script>

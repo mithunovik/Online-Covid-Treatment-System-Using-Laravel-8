@@ -51,6 +51,7 @@ Route::get('/barishal',[HomeController::class,'barishal']);
 Route::get('/blood',[HomeController::class,'blood']);
 Route::post('/user_donor',[HomeController::class,'userDonor']);
 Route::get('/donorlist',[HomeController::class,'donor']);
+Route::get('/b_bank',[HomeController::class,'bloodBank']);
 
 
 
@@ -146,6 +147,10 @@ Route::get('/donor_list',[AdminController::class,'donorList']);
 Route::get('/delete_donors/{id}',[AdminController::class,'deleteDonors']);
 Route::get('/update_donors/{id}',[AdminController::class,'updateDonors']);
 Route::post('/editdonor/{id}',[AdminController::class,'editDonors']);
+
+Route::get('/add_blood',[AdminController::class,'addBlood']);
+Route::post('/upload_blood',[AdminController::class,'uploadBank']);
+
 
 
 

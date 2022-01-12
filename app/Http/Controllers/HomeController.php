@@ -21,6 +21,8 @@ use App\Models\Rajshahi;
 use App\Models\Khulna;
 use App\Models\Barishal;
 use App\Models\Donor;
+use App\Models\Bank;
+
 
 
 
@@ -252,5 +254,11 @@ class HomeController extends Controller
         $donor=Donor::paginate(12);
         return view('user.donorlist',compact('donor'));
     }
+    function bloodBank(){
+        $bank=Bank::paginate(12);
+        return view('user.b_bank',compact('bank'));
+    }
+   
+
 }
 

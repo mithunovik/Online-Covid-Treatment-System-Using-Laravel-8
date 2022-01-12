@@ -100,10 +100,10 @@
              Blood
             </button>
              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-               <li><a class="dropdown-item" href="#">Add Blood Bank</a></li>
+               <li><a class="dropdown-item" href="{{url('add_blood')}}">Add Blood Bank</a></li>
                <li><a class="dropdown-item" href="#">Blood Bank List</a></li>
                <li><a class="dropdown-item" href="{{url('add_donor')}}">Add Donor</a></li>
-               <li><a class="dropdown-item" href="donor_list">Donor List</a></li>
+               <li><a class="dropdown-item" href="{{url('donor_list')}}">Donor List</a></li>
     
              </ul>
           </div>

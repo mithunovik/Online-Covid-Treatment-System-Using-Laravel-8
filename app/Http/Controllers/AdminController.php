@@ -17,6 +17,8 @@ use App\Models\Rajshahi;
 use App\Models\Khulna;
 use App\Models\Barishal;
 use App\Models\Donor;
+use App\Models\Bank;
+
 
 
 
@@ -493,5 +495,18 @@ class AdminController extends Controller
         $donors->phone=$req->phone;
         $donors->save();
         return redirect()->back();
+    }
+    public function addBlood(){
+        return view('admin.add_blood');
+    }
+
+    function uploadBank(Request $req){
+        $bank=new Bank;
+        $bank->name=$req->name;
+        $bank->address=$req->address;
+        $bank->phone=$req->phone;
+        $bank->save();
+        return redirect()->back()->with('message','Blood Bank Added Successfully');
+        
     }
 }
